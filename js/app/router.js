@@ -1,4 +1,4 @@
-define([ 'backbone' ], function(Backbone) {
+define([ 'backbone'], function(Backbone) {
 	var router = Backbone.Router.extend({
 		routes : {
 			"home" : "home",
@@ -6,37 +6,19 @@ define([ 'backbone' ], function(Backbone) {
 			"contact" : "contact",
 			"" : "home"
 		},
-		executeController: function(options){
-			var opts = $.extend({
-				target: $('#main'),
-				data: {},
-				controller: '',
-				method: 'run'
-			}, options);
-			
-			require(['app/controllers/' + opts.controller], function(controller){
-				if(opts.target){
-					
-				};
-				controller.init(opts.data);
-				controller[opts.method].call(this, opts.target, opts.data);
-			});
-		},
 		home : function() {
-			
-			this.executeController({
+			console.log('home');
+			AmdApp.executeController({
 				"controller": 'home'
 			});
 		},
 		about : function(query, page) {
-			console.log('about')
-			this.executeController({
+			AmdApp.executeController({
 				"controller": 'about'
 			});
 		},
 		contact : function() {
-			console.log('Contact');
-			this.executeController({
+			AmdApp.executeController({
 				"controller": 'contact'
 			});
 		}
