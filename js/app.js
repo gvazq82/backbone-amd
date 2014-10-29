@@ -1,4 +1,4 @@
-define(['backbone','app/router'], function(Backbone, Router){
+define(['backbone','app/router', 'app/layout'], function(Backbone, Router, Layout){
 	var AmdApp = {
 		View: Backbone.View.extend({}),
 		Model: Backbone.Model.extend({}),
@@ -12,6 +12,7 @@ define(['backbone','app/router'], function(Backbone, Router){
 				target: $('#main'),
 				data: {},
 				controller: '',
+				topMenu: null,
 				method: 'run'
 			}, options);
 			
@@ -19,6 +20,7 @@ define(['backbone','app/router'], function(Backbone, Router){
 			if(opts.target){
 				opts.target.html('');
 			}
+			
 			//--Call dynamically the controller
 			require(['app/controllers/' + opts.controller], function(controller){
 				controller.init(opts.data);
@@ -28,8 +30,19 @@ define(['backbone','app/router'], function(Backbone, Router){
 	};
 	
 	//--Create a method to start the application
-	AmdApp.start = function(){
+	AmdApp.start = function(mainContainer){
 		AmdApp.Router = new Router();
+		//--Create Layout
+		AmdApp.Layout = new Layout({
+			el: $(mainContainer),
+			model: new Backbone.Model()
+		}).render();
+		
+		AmdApp.Layout.trigger("updateMenu");
+		
+		$(window).on("hashchange", function(){
+			AmdApp.Layout.trigger("updateMenu");
+		});
 		
 		if(Backbone.history){
 			Backbone.history.start();

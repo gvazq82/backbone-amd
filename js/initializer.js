@@ -17,5 +17,5 @@ requirejs.config({
     }
 });
 require(['app'], function(AmdApp){
-	AmdApp.start();
+	AmdApp.start('#amd-app');
 });
