@@ -1,6 +1,6 @@
 define(
-		[ 'backbone', 'underscore' ],
-		function(Backbone, _) {
+		[ 'app', 'backbone', 'underscore' ],
+		function(AmdApp, Backbone, _) {
 			var template = ['<div class="page-header">',
 					'<h1>Contact</h1>',
 					'</div>',
@@ -12,10 +12,10 @@ define(
 				        '<div class="form-group">',
 				        '<textarea rows="4" cols="50" class="form-control" placeholder="Comments" required=""></textarea>',
 				        '</div>',
-				        '<button class="btn btn-success btn-block" type="submit">Submit</button>',
+				        '<button class="btn btn-success pull-right" type="submit">Submit</button>',
 				      '</form>',
 				    '</div>'];
-			var homeView = Backbone.View.extend({
+			var homeView = AmdApp.View.extend({
 				render : function() {
 					this.$el.html(_.template(template.join(""), this.model
 							.toJSON()));

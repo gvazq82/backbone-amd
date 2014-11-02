@@ -5,10 +5,11 @@ define(['backbone','app/views/ContactView'], function(Backbone, ContactView){
 		},
 		run: function(container, data){
 			
-			new ContactView({
-				el: container,
+			var view = new ContactView({
 				model: new Backbone.Model()
-			}).render();
+			});
+			
+			container.display(view);
 		}
 	};
 });

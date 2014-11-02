@@ -4,10 +4,9 @@ define([ 'backbone'], function(Backbone) {
 			"home" : "home",
 			"about" : "about",
 			"contact" : "contact",
-			"" : "home"
+			"*other" : "home"
 		},
 		home : function() {
-			console.log('home');
 			AmdApp.executeController({
 				"controller": 'home'
 			});

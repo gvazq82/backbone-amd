@@ -5,10 +5,11 @@ define(['backbone','app/views/HomeView'], function(Backbone, HomeView){
 		},
 		run: function(container, data){
 			
-			new HomeView({
-				el: container,
+			var view = new HomeView({
 				model: new Backbone.Model()
-			}).render();
+			});
+			
+			container.display(view);
 		}
 	};
 });

@@ -5,10 +5,11 @@ define(['backbone','app/views/AboutView'], function(Backbone, AboutView){
 		},
 		run: function(container, data){
 			
-			new AboutView({
-				el: container,
+			var view = new AboutView({
 				model: new Backbone.Model()
-			}).render();
+			});
+			
+			container.display(view);
 		}
 	};
 });

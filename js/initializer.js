@@ -1,5 +1,6 @@
 requirejs.config({
     baseUrl: 'js/lib',
+    urlArgs: new Date().getTime(),
     paths: {
         app: '../app',
         jquery: 'jquery-2.1.1.min',
