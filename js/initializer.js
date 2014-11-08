@@ -2,9 +2,10 @@ requirejs.config({
     baseUrl: 'js/lib',
     urlArgs: new Date().getTime(),
     paths: {
-        app: '../app',
-        jquery: 'jquery-2.1.1.min',
-        underscore: 'underscore'
+        "app": '../app',
+        "data": '../data',
+        "jquery": 'jquery-2.1.1.min',
+        "underscore": 'underscore'
     },
     shim: {
         backbone: {
@@ -16,7 +17,4 @@ requirejs.config({
             deps: ['jquery']
         }
     }
-});
-require(['app'], function(AmdApp){
-	AmdApp.start('#amd-app');
 });

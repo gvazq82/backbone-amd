@@ -8,5 +8,10 @@
 </head>
 <body>
 	<div id="amd-app"></div>
+	<script>
+		require(['app'], function(AmdApp){
+			AmdApp.start('#amd-app');
+		});
+	</script>
 </body>
 </html>

@@ -1,10 +1,11 @@
 define(['backbone','app/router', 'app/layout'], function(Backbone, Router, Layout){
 	/*
-	 * Define the AmdApp object with the basic elements available in the App.
+	 * Define the AmdApp object with the basic elements available in the Application.
 	 */
 	var AmdApp = {
 		View: Backbone.View.extend({}),
 		Model: Backbone.Model.extend({}),
+		Collection: Backbone.Collection.extend({}),
 		Region: Backbone.View.extend({
 			currentView : null,
 			display: function(view){

@@ -4,6 +4,7 @@ define([ 'backbone'], function(Backbone) {
 			"home" : "home",
 			"about" : "about",
 			"contact" : "contact",
+			"exception" : "exception",
 			"*other" : "home"
 		},
 		home : function() {
@@ -19,6 +20,11 @@ define([ 'backbone'], function(Backbone) {
 		contact : function() {
 			AmdApp.executeController({
 				"controller": 'contact'
+			});
+		},
+		exception : function() {
+			AmdApp.executeController({
+				"controller": 'exception'
 			});
 		}
 	});
