@@ -32,7 +32,10 @@
 	},[ 'boot' ], function() {
 
 		// Load the specs
-		require(["spec/routerSpec"], function() {
+		require(["spec/routerSpec",
+		         "spec/layoutSpec",
+		         "spec/collections/contactsSpec",
+		         "spec/models/contactSpec"], function() {
 
 			// Initialize the HTML Reporter and execute the environment (setup by `boot.js`)
 			window.onload();

@@ -20,8 +20,9 @@ define([ 'backbone', 'underscore' ], function(Backbone, _) {
 		initialize: function(){
 			this.on("updateMenu", this.updateMenuOption);
 		},
+		template: _.template(template.join("")),
 		render : function() {
-			this.$el.html(_.template(template.join(""), this.model.toJSON()));
+			this.$el.html(this.template(this.model.toJSON()));
 			this.mainRegion = new AmdApp.Region({
 				el: this.$("#main")
 			});
