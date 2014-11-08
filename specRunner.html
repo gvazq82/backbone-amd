@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<title>Tests - AMD app</title>
+
+<link rel="stylesheet" href="js/lib/jasmine/jasmine.css">
+
+<script data-main="js/initializer" src="js/lib/require-2.1.15.js"></script>
+
+<script type="text/javascript">
+	/*Use same configuration in initializer plus the jasmine paths*/
+	require({
+		paths: {
+			"spec": "../test/jasmine/spec",
+			"jasmine": "jasmine/jasmine",
+			"jasmine-html": "jasmine/jasmine-html",
+			"boot": "jasmine/boot"
+		},
+		shim: {
+			"jasmine": {
+				"deps": ["jquery"],
+				"exports": "jasmine"
+			},
+			"jasmine-html": {
+				"deps": ["jasmine"],
+				"exports": "jasmine"
+			},
+			"boot": {
+				"deps": ["jasmine", "jasmine-html"],
+				"exports": "jasmine"
+			}
+		}
+	},[ 'boot' ], function() {
+
+		// Load the specs
+		require(["spec/routerSpec"], function() {
+
+			// Initialize the HTML Reporter and execute the environment (setup by `boot.js`)
+			window.onload();
+		});
+	});
+</script>
+
+</head>
+
+<body>
+	<div id="amd-app"></div>
+</body>
+</html>
