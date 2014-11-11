@@ -22,7 +22,7 @@ define([ 'backbone', 'underscore' ], function(Backbone, _) {
 		},
 		template: _.template(template.join("")),
 		render : function() {
-			this.$el.html(this.template(this.model.toJSON()));
+			this.$el.html(this.template());
 			this.mainRegion = new AmdApp.Region({
 				el: this.$("#main")
 			});
