@@ -22,13 +22,7 @@ define([ "app", "app/controllers/exception", "app/layout", 'app/views/ErrorView'
 		/* Include Spy to review the layout main region display was called. */
 		it("Expect to render the Controller on Main Region", function() {
 			expect(appLayout.mainRegion.display).toHaveBeenCalled();
-
 		});
 		
-		it("Expect to view render is a Exception View", function() {
-			//console.log(appLayout.mainRegion.currentView);
-			//expect(appLayout.mainRegion.currentView instanceof ErrorView).toBeTruthy();
-
-		});
 	});
 });

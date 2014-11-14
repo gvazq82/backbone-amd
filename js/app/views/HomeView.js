@@ -8,8 +8,9 @@ define(
 					'<p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more È</a></p>',
 					'</div>' ];
 			var homeView = AmdApp.View.extend({
+				template: _.template(template.join("")),
 				render : function() {
-					this.$el.html(_.template(template.join(""), this.model
+					this.$el.html(this.template(this.model
 							.toJSON()));
 					return this;
 				}
