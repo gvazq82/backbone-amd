@@ -28,10 +28,9 @@ JasmineJS(http://jasmine.github.io/2.0/introduction.html)
 "Jasmine is a behavior-driven development framework for testing JavaScript code."
  
 
-The Design
-===========
-
-These are the main considerations for the design:
+Application Structure
+=====================
+These were the main considerations for the design:
 
 1.- app.js: Define the base Application Object called "AmdApp" that defines and initialize the main application components.
 2.- layout.js: Define a Layout file responsible to handle the Main display for the application.
@@ -39,10 +38,22 @@ These are the main considerations for the design:
 4.- Controller: Create atomic pieces of functionality called "controllers" that are responsible to handle a particular functionality. The controller receives the data and the section where the "module" has to be displayed and does not know anything about the layout, allowing to the "Main Handler" to determinate where to display each module.
 5.- router.js: Provide the mapping for the different URLs available in the application and the controller to execute the functionality.
 
+Running the project
+===================
+
+To run the project it is just required to navigate to 'index.html' page in your browser.
+
+```
+/%path%/backbone-amd/index.html
+```
+
 Testing
 ====
-I decided to integrate some JasmineJS spec files just to demostrate how this can be integrated to RequireJS and BackboneJS.
+I decided to integrate some JasmineJS spec files just to demonstrate how this can be integrated to RequireJS and BackboneJS. To run the test just open 'specRunner.html'.
 
+```
+/%path%/backbone-amd/specRunner.html
+```
 
 UI Considerations
 =================
